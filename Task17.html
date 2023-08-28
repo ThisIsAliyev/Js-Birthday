@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Task17.css">
+
+    <title>Task 17</title>
+</head>
+<body>
+    <main>
+        <section>
+            <p>Day:</p>
+            <input class="js-day" type="text">
+        </section>
+
+        <section>
+            <p>Month:</p>
+            <input class="js-month" type="text">
+        </section>
+
+        <section>
+            <p>Year:</p>
+            <input class="js-year" type="text">
+        </section>
+
+        <button onclick="addDate()">Submit</button>
+    </main>
+    <div>
+        <p class="result"></p>
+        <i onclick="
+        document.querySelector('div').style.display = 'none';
+        document.querySelector('main').style.filter = 'blur(0px)'
+        document.querySelector('body').style.backgroundColor = 'white';" class="fa-regular fa-circle-xmark"></i>
+    </div>
+    <script>
+        let dateObject = [
+            {
+                day:"13",
+                months:"04",
+                year: '2005'
+            }
+        ]
+
+        let monthName = [null,'January', 'February', 'March', 'April', 'May', 
+        'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        document.querySelector('div').style.display = 'none';
+
+        function addDate() {
+            let day = document.querySelector('.js-day').value;
+            let month = document.querySelector('.js-month').value;
+            let year = document.querySelector('.js-year').value;
+            
+            document.querySelector('div').style.display = 'grid';
+            document.querySelector('main').style.filter = 'blur(8px)'
+            document.querySelector('body').style.backgroundColor = 'rgb(99, 99, 99)';
+            
+            if(isNaN(day) || isNaN(month) || isNaN(year) || document.querySelector('.js-month').value < 1 || document.querySelector('.js-month').value > 12 ) {
+                document.querySelector('.result').innerHTML = `Enter valid Number.`;
+            } else {
+                document.querySelector('.result').innerHTML = `Your birthday is ${day} ${monthName[month]} ${year}`;
+            }
+        }
+    </script>
+</body>
+</html>
