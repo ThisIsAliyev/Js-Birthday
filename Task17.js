@@ -61,3 +61,11 @@ if(document.querySelector('.js-day').value === '' || document.querySelector('.js
         }
     }
 }
+
+document.addEventListener("keydown" , function(event) {
+    if(event.key === 'Enter') {
+        addDate();
+    } else {
+        return;
+    }
+})
