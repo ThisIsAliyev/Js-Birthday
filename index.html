@@ -34,35 +34,6 @@
         document.querySelector('main').style.filter = 'blur(0px)'
         document.querySelector('body').style.backgroundColor = 'white';" class="fa-regular fa-circle-xmark"></i>
     </div>
-    <script>
-        let dateObject = [
-            {
-                day:"13",
-                months:"04",
-                year: '2005'
-            }
-        ]
-
-        let monthName = [null,'January', 'February', 'March', 'April', 'May', 
-        'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        document.querySelector('div').style.display = 'none';
-
-        function addDate() {
-            let day = document.querySelector('.js-day').value;
-            let month = document.querySelector('.js-month').value;
-            let year = document.querySelector('.js-year').value;
-            
-            document.querySelector('div').style.display = 'grid';
-            document.querySelector('main').style.filter = 'blur(8px)'
-            document.querySelector('body').style.backgroundColor = 'rgb(99, 99, 99)';
-            
-            if(isNaN(day) || isNaN(month) || isNaN(year) || document.querySelector('.js-month').value < 1 || document.querySelector('.js-month').value > 12 ) {
-                document.querySelector('.result').innerHTML = `Enter valid Number.`;
-            } else {
-                document.querySelector('.result').innerHTML = `Your birthday is ${day} ${monthName[month]} ${year}`;
-            }
-        }
-    </script>
+    <script src="Task17.js"></script>
 </body>
 </html>
